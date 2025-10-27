@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <unordered_map>
 
-#include "common/runs.hpp"
+#include <common/runs.hpp>
 
 namespace py = pybind11;
 

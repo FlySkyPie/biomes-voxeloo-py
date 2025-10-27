@@ -4,9 +4,9 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-#include "common/colors.hpp"
+#include <common/colors.hpp>
 #include "common/format.hpp"
-#include "common/meshes.hpp"
+#include <common/meshes.hpp>
 #include "common/voxels.hpp"
 #include "py_ext/meshes.hpp"
 

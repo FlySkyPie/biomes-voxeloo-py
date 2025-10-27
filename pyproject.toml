@@ -1,0 +1,30 @@
+[project]
+name = "VoxelooPy"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Wei Ji (FlySkyPie)", email = "c445dj544@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Private :: Do Not Upload",
+]
+
+[build-system]
+requires = ["scikit-build-core>=0.11", "pybind11>=3.0"]
+build-backend = "scikit_build_core.build"
+
+
+[tool.pdm]
+distribution = true

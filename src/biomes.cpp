@@ -4,7 +4,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-#include "biomes/biomes.hpp"
+#include <biomes/biomes.hpp>
 
 namespace py = pybind11;
 

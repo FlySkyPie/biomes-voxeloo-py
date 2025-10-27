@@ -12,11 +12,11 @@
 #include <tomasakeninemoeller/tribox3.h>
 
 #include "biomes/rasterization.hpp"
-#include "common/blocks.hpp"
-#include "common/colors.hpp"
+#include <common/blocks.hpp>
+#include <common/colors.hpp>
 #include "common/errors.hpp"
 #include <VoxelooGeometry/geometry.hpp>
-#include "common/meshes.hpp"
+#include <common/meshes.hpp>
 #include "common/spatial.hpp"
 #include "common/threads.hpp"
 #include "common/transport.hpp"

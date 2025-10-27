@@ -4,8 +4,8 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-#include "common/blocks.hpp"
-#include "common/colors.hpp"
+#include <common/blocks.hpp>
+#include <common/colors.hpp>
 #include <VoxelooGeometry/geometry.hpp>
 #include "common/transport.hpp"
 #include "py_ext/meshes.hpp"

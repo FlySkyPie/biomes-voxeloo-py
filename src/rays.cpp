@@ -7,8 +7,8 @@
 #include <cstdint>
 #include <unordered_map>
 
-#include "common/blocks.hpp"
-#include "common/colors.hpp"
+#include <common/blocks.hpp>
+#include <common/colors.hpp>
 #include "common/rays.hpp"
 #include "common/spatial.hpp"
 #include "common/succinct.hpp"

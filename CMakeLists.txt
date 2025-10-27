@@ -1,29 +1,43 @@
-cmake_minimum_required (VERSION 3.5)
+cmake_minimum_required (VERSION 3.15...4.0)
 
-project(VoxelooPy)
+project(
+    VoxelooPy
+    VERSION 0.1.0
+    LANGUAGES CXX)
 
-# set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CEREAL_BUILD_DOC OFF)
 set(EIGEN_BUILD_DOC OFF)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+set(VOXELOO_BUILD_TEST OFF)
 
-include(../cmake/CPM.cmake)
+include(cmake/CPM.cmake)
 
+CPMAddPackage("gl:libeigen/eigen#3.4.0")
+CPMAddPackage("gh:jupp0r/prometheus-cpp@1.0.1")
 CPMAddPackage("gh:pybind/pybind11@2.9.2")
 CPMAddPackage("gh:USCiLab/cereal@1.3.2")
+CPMAddPackage("gh:martinus/robin-hood-hashing#3.11.5")
 CPMAddPackage("gh:FlySkyPie/biomes-voxeloo-geometry@0.1.1")
 CPMAddPackage("gh:FlySkyPie/biomes-voxeloo-light-kernelry@0.1.3")
-CPMAddPackage("gh:martinus/robin-hood-hashing#3.11.5")
-CPMAddPackage("gh:FlySkyPie/OpenSimplexNoise@1.0.2")
+CPMAddPackage(
+    NAME OpenSimplexNoise
+    GITHUB_REPOSITORY "FlySkyPie/OpenSimplexNoise"
+    GIT_TAG v1.0.3
+    OPTIONS 
+        "OSN_BUILD_STATIC ON"
+        "OSN_BUILD_SHARED OFF"
+)
 CPMAddPackage("gh:FlySkyPie/tomasakeninemoeller@1.0.0")
-CPMAddPackage("gl:libeigen/eigen#3.4.0")
+CPMAddPackage("gh:FlySkyPie/biomes-voxeloo#develop")
 
+find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(pybind11 REQUIRED)
 
-pybind11_add_module(${PROJECT_NAME}
+python_add_library(
+    voxeloo MODULE 
     src/biomes.cpp
     src/blocks.cpp
     src/culling.cpp
@@ -40,10 +54,11 @@ pybind11_add_module(${PROJECT_NAME}
     src/spatial.cpp
     src/tensors.cpp
     src/voronoi.cpp
-    src/voxels.cpp)
+    src/voxels.cpp
+    WITH_SOABI)
 
 target_link_libraries(
-    ${PROJECT_NAME}
+    voxeloo
     PRIVATE
     VoxelooGeometry
     VoxelooLightKernelry
@@ -56,8 +71,13 @@ target_link_libraries(
     tomasakeninemoeller)
 
 target_include_directories(
-    ${PROJECT_NAME}
+    voxeloo
     PUBLIC 
     ${PROJECT_SOURCE_DIR}/include
-    ${PROJECT_SOURCE_DIR}/../include
 )
+
+# This is passing in the version as a define just as an example
+target_compile_definitions(voxeloo PRIVATE VERSION_INFO=${PROJECT_VERSION})
+
+# The install directory is the output (wheel) directory
+install(TARGETS voxeloo DESTINATION VoxelooPy)

@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <unordered_map>
 
-#include "common/blocks.hpp"
+#include <common/blocks.hpp>
 #include <VoxelooGeometry/geometry.hpp>
 #include "common/macros.hpp"
 #include "common/spatial.hpp"
