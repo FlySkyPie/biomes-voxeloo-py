@@ -2,6 +2,7 @@ from typing import Generic, TypeVar, Tuple, Union
 from .blocks import BlockList, VolumeBlock, SparseBlock
 from .culling import AABB, OcclusionBuffer, OcclusionCuller
 from .shards import shard_encode, shard_decode
+from .spatial import DensityMap, ColorMap
 from .galois import (
     Transform, MaterialBuffer, CheckboardPosition, MoistureLevel,
     Samples, Sampler, Index, IndexBuilder, QuadVertex, Quads,
@@ -31,7 +32,7 @@ from .rays import (
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
-RGBA = Tuple[int, int, int, int]
+RGBA = Tuple[int, int, int, int]  # Used by spatial.ColorMap
 
 from .core import bind
 from .runs import Index, IndexBuilder
