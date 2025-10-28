@@ -18,6 +18,7 @@ from .geometry import (
 )
 from .noise import SimplexNoise, noise
 from .primitives import Node, xy, xyz
+from .rasterization import voxelize_mesh
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
