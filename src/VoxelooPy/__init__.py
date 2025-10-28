@@ -9,12 +9,14 @@ if TYPE_CHECKING:
     from ._biomes import (
         VolumeBlock,
         SparseBlock,
+        BlockList,
     )
 
 __all__ = [
-    "__doc__", 
-    "__version__", 
+    "__doc__",
+    "__version__",
     "shards",
     "VolumeBlock",
     "SparseBlock",
+    "BlockList",
 ]
