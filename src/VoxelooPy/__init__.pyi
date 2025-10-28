@@ -17,6 +17,7 @@ from .geometry import (
     Vec2d, Vec3d, Vec4d
 )
 from .noise import SimplexNoise, noise
+from .primitives import Node, xy, xyz
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
