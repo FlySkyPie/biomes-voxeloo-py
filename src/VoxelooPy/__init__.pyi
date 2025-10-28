@@ -29,6 +29,12 @@ from .rays import (
     render_orthographic_approx,
     render_camera_sequence
 )
+from .tensors import (
+    Tensor, Tensor_Bool,
+    Tensor_I8, Tensor_I16, Tensor_I32, Tensor_I64,
+    Tensor_U8, Tensor_U16, Tensor_U32, Tensor_U64,
+    Tensor_F32, Tensor_F64
+)
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
