@@ -4,9 +4,10 @@ from .culling import AABB, OcclusionBuffer, OcclusionCuller
 from .galois import (
     Transform, MaterialBuffer, CheckboardPosition, MoistureLevel,
     Samples, Sampler, Index, IndexBuilder, QuadVertex, Quads,
-    GeometryBuffer, Vertex, Texture, Mesh, CombinedMesh, Buffer,
+    GeometryBuffer, Vertex, Texture, CombinedMesh, Buffer,
     StorageBuffer, Level, Quad, Box, Edge, WireframeMesh
 )
+from .meshes import Mesh
 from .geometry import (
     Vec2, Vec3, Vec4,
     Vec2u, Vec3u, Vec4u,
