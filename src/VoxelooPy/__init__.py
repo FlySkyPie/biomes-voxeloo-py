@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .voxeloo import __doc__, __version__, shards, biomes, blocks, culling, geometry, meshes, noise, primitives, rasterization, rays, spatial, tensors, voronoi
+from .voxeloo import __doc__, __version__, shards, biomes, blocks, culling, geometry, meshes, noise, primitives, rasterization, rays, spatial, tensors, voronoi, voxels
 
 __all__ = [
     "__doc__",
@@ -20,4 +20,5 @@ __all__ = [
     "spatial",
     "tensors",
     "voronoi",
+    "voxels",
 ]

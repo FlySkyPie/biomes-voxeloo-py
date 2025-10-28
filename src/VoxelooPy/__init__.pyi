@@ -2,6 +2,7 @@ from typing import Generic, TypeVar, Tuple, Union
 from .blocks import BlockList, VolumeBlock, SparseBlock
 from .culling import AABB, OcclusionBuffer, OcclusionCuller
 from .shards import shard_encode, shard_decode
+from .voxels import Box, Dir, voxels_to_mesh
 from .spatial import DensityMap, ColorMap
 from .voronoi import rasterize_2d, rasterize_3d
 from .galois import (
