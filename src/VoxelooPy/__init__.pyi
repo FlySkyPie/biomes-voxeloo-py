@@ -33,3 +33,4 @@ T = TypeVar('T', bool, int, float)
 RGBA = Tuple[int, int, int, int]
 
 from .core import bind
+from .runs import Index, IndexBuilder

@@ -16,4 +16,5 @@ __all__ = [
     "primitives",
     "rasterization",
     "rays",
+    "runs",
 ]
