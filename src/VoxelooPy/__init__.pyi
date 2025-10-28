@@ -1,6 +1,7 @@
 from typing import Generic, TypeVar, Tuple, Union
 from .blocks import BlockList, VolumeBlock, SparseBlock
 from .culling import AABB, OcclusionBuffer, OcclusionCuller
+from .shards import shard_encode, shard_decode
 from .galois import (
     Transform, MaterialBuffer, CheckboardPosition, MoistureLevel,
     Samples, Sampler, Index, IndexBuilder, QuadVertex, Quads,
