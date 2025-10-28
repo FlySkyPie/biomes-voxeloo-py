@@ -1,0 +1,3 @@
+from typing import Any
+
+def bind(vox_module: Any) -> None: ...
