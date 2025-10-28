@@ -16,6 +16,7 @@ from .geometry import (
     Vec2f, Vec3f, Vec4f,
     Vec2d, Vec3d, Vec4d
 )
+from .noise import SimplexNoise, noise
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
