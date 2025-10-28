@@ -3,6 +3,7 @@ from .blocks import BlockList, VolumeBlock, SparseBlock
 from .culling import AABB, OcclusionBuffer, OcclusionCuller
 from .shards import shard_encode, shard_decode
 from .spatial import DensityMap, ColorMap
+from .voronoi import rasterize_2d, rasterize_3d
 from .galois import (
     Transform, MaterialBuffer, CheckboardPosition, MoistureLevel,
     Samples, Sampler, Index, IndexBuilder, QuadVertex, Quads,
