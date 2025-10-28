@@ -19,6 +19,14 @@ from .geometry import (
 from .noise import SimplexNoise, noise
 from .primitives import Node, xy, xyz
 from .rasterization import voxelize_mesh
+from .rays import (
+    integrate,
+    integrate_approx,
+    render_orthographic,
+    render_orthographic_color,
+    render_orthographic_approx,
+    render_camera_sequence
+)
 import numpy as np
 
 T = TypeVar('T', bool, int, float)
