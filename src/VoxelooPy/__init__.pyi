@@ -42,5 +42,4 @@ import numpy as np
 T = TypeVar('T', bool, int, float)
 RGBA = Tuple[int, int, int, int]  # Used by spatial.ColorMap
 
-from .core import bind
 from .runs import Index, IndexBuilder
