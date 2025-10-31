@@ -1,0 +1,36 @@
+from typing import Any
+
+from .sbo import Buffer
+
+class CheckboardPosition:
+    White: int
+    Black: int
+
+class Index:
+    def get_sampler(self) -> Sampler: ...
+    def dumps(self) -> bytes: ...
+    def loads(self, data: bytes) -> None: ...
+
+class IndexBuilder:
+    def __init__(self, arg0: int, arg1: int) -> None: ...
+    def add_block(self, arg0: Any) -> None: ...
+    def build(self) -> Index: ...
+
+class MoistureLevel:
+    Zero: int
+    Low: int
+    Moderate: int
+    High: int
+    Full: int
+
+class Samples:
+    count: int
+    offsets: Any
+
+class Sampler:
+    def size(self) -> int: ...
+    def get(self, index: int) -> Any: ...
+
+def to_surface_tensor(arg0: Any) -> Any: ...
+def to_block_sample_tensor(arg0: Any) -> Any: ...
+def to_material_buffer(arg0: Any) -> Buffer: ...
