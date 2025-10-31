@@ -1,5 +1,6 @@
 from typing import Generic, TypeVar, Tuple, Union
-from .blocks import BlockList, VolumeBlock, SparseBlock
+from .blocks import BlockList
+from .biomes import VolumeBlock, SparseBlock
 from .culling import AABB, OcclusionBuffer, OcclusionCuller
 from .shards import shard_encode, shard_decode
 from .voxels import Box, Dir, voxels_to_mesh
