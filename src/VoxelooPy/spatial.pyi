@@ -1,7 +1,8 @@
-from typing import Tuple, List, Union
+from typing import Tuple, List
+from ctypes import c_uint32
 import numpy as np
 
-RGBA = Tuple[int, int, int, int]
+RGBA = c_uint32
 Vec3i = Tuple[int, int, int]
 
 class DensityMap:
@@ -10,7 +11,9 @@ class DensityMap:
     def get(self, x: int, y: int, z: int) -> float: ...
     def bounding_box(self) -> Tuple[Vec3i, Vec3i]: ...
     def numpy(self) -> np.ndarray: ...
-    def blocks(self, threshold: float = 0.5, color: RGBA = ...) -> ...: ...  # Return type depends on blocks.pyi
+    def blocks(
+        self, threshold: float = 0.5, color: RGBA = ...
+    ) -> ...: ...  # Return type depends on blocks.pyi
     def values(self) -> List[Tuple[int, int, int, float]]: ...
     def update(self, vals: List[Tuple[int, int, int, float]]) -> None: ...
 
