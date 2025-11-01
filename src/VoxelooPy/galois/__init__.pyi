@@ -12,11 +12,6 @@ from . import sbo
 T = TypeVar("T", bool, int, float)
 RGBA = Tuple[int, int, int, int]
 
-class Transform:
-    permute: np.ndarray
-    reflect: np.ndarray
-    shift: np.ndarray
-
 class Buffer:
     rank: int
     data: Any
@@ -31,11 +26,6 @@ class Level:
     MICRO: int
 
 # Module functions
-def apply(tensor: Any, transform: Transform) -> Any: ...
-def shift(transform: Transform) -> Transform: ...
-def permute(transform: Transform) -> Transform: ...
-def reflect(transform: Transform) -> Transform: ...
-def compose(t1: Transform, t2: Transform) -> Transform: ...
 def to_surface(tensor: Any) -> Any: ...
 
 
