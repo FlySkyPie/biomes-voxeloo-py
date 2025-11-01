@@ -1,7 +1,8 @@
 from typing import Literal, Tuple, Any
+from ctypes import c_uint32
 import numpy as np
 
-RGBA = Tuple[int, int, int, int]
+RGBA = c_uint32
 
 class Box:
     v0: Tuple[int, int, int]

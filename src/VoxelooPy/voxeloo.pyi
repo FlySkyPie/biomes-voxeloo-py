@@ -15,8 +15,6 @@ from . import tensors
 from . import voronoi
 from . import voxels
 
-from . import voxeloo
-
 __all__ = [
     "galois",
     "primitives",
@@ -34,6 +32,4 @@ __all__ = [
     "tensors",
     "voronoi",
     "voxels",
-
-    "voxeloo",
 ]
