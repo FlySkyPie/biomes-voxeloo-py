@@ -1,16 +1,36 @@
-from typing import Literal, Tuple, Any
-from ctypes import c_uint32
+from typing import Any
 import numpy as np
 
-RGBA = c_uint32
-
 class Box:
-    v0: Tuple[int, int, int]
-    v1: Tuple[int, int, int]
-    def __init__(self, v0: Tuple[int, int, int], v1: Tuple[int, int, int]) -> None: ...
+    def __init__(self, v0: tuple[int, int, int], v1: tuple[int, int, int]) -> None: ...
     def numpy(self) -> np.ndarray: ...
+    @property
+    def v0(self) -> tuple[int, int, int]: ...
+    @v0.setter
+    def v0(self, value: tuple[int, int, int]) -> None: ...
+    @property
+    def v1(self) -> tuple[int, int, int]: ...
+    @v1.setter
+    def v1(self, value: tuple[int, int, int]) -> None: ...
     def __repr__(self) -> str: ...
 
-Dir = Literal["X_NEG", "X_POS", "Y_NEG", "Y_POS", "Z_NEG", "Z_POS"]
+class Dir:
+    X_NEG: Dir
+    X_POS: Dir
+    Y_NEG: Dir
+    Y_POS: Dir
+    Z_NEG: Dir
+    Z_POS: Dir
+    @property
+    def name(self) -> str: ...
+    @property
+    def value(self) -> int: ...
 
-def voxels_to_mesh(vals: np.ndarray[Any, np.dtype[np.uint8]]) -> Any: ...
+X_NEG: Dir
+X_POS: Dir
+Y_NEG: Dir
+Y_POS: Dir
+Z_NEG: Dir
+Z_POS: Dir
+
+def voxels_to_mesh(vals: np.ndarray[Any, Any]) -> Any: ...
