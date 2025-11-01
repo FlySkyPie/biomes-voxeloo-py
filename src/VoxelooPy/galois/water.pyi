@@ -1,0 +1,6 @@
+from typing import Any
+
+GeometryBuffer = Any
+
+def to_surface(tensor: Any) -> Any: ...
+def to_geometry() -> Any: ...
