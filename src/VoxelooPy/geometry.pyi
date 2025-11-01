@@ -1,44 +1,107 @@
-from typing import Tuple, TypeVar, Generic
+from typing import Tuple
+from ctypes import c_uint8, c_int32, c_float, c_double
 
-T = TypeVar('T', int, float, bool)
+class Vec2b:
+    x: bool
+    y: bool
+    def __init__(self, x: bool, y: bool) -> None: ...
+    def tuple(self) -> Tuple[bool, bool]: ...
 
-class Vec2(Generic[T]):
-    x: T
-    y: T
-    def __init__(self, x: T, y: T) -> None: ...
-    def tuple(self) -> Tuple[T, T]: ...
+class Vec2d:
+    x: c_double
+    y: c_double
+    def __init__(self, x: c_double, y: c_double) -> None: ...
+    def tuple(self) -> Tuple[c_double, c_double]: ...
 
-class Vec3(Generic[T]):
-    x: T
-    y: T
-    z: T
-    def __init__(self, x: T, y: T, z: T) -> None: ...
-    def tuple(self) -> Tuple[T, T, T]: ...
+class Vec2f:
+    x: c_float
+    y: c_float
+    def __init__(self, x: c_float, y: c_float) -> None: ...
+    def tuple(self) -> Tuple[c_float, c_float]: ...
 
-class Vec4(Generic[T]):
-    x: T
-    y: T
-    z: T
-    w: T
-    def __init__(self, x: T, y: T, z: T, w: T) -> None: ...
-    def tuple(self) -> Tuple[T, T, T, T]: ...
+class Vec2i:
+    x: c_int32
+    y: c_int32
+    def __init__(self, x: c_int32, y: c_int32) -> None: ...
+    def tuple(self) -> Tuple[c_int32, c_int32]: ...
 
-Vec2u = Vec2[unsigned int]
-Vec3u = Vec3[unsigned int]
-Vec4u = Vec4[unsigned int]
+class Vec2u:
+    x: c_uint8
+    y: c_uint8
+    def __init__(self, x: c_uint8, y: c_uint8) -> None: ...
+    def tuple(self) -> Tuple[c_uint8, c_uint8]: ...
 
-Vec2i = Vec2[int]
-Vec3i = Vec3[int]
-Vec4i = Vec4[int]
+class Vec3b:
+    x: bool
+    y: bool
+    z: bool
+    def __init__(self, x: bool, y: bool, z: bool) -> None: ...
+    def tuple(self) -> Tuple[bool, bool, bool]: ...
 
-Vec2b = Vec2[bool]
-Vec3b = Vec3[bool]
-Vec4b = Vec4[bool]
+class Vec3d:
+    x: c_double
+    y: c_double
+    z: c_double
+    def __init__(self, x: c_double, y: c_double, z: c_double) -> None: ...
+    def tuple(self) -> Tuple[c_double, c_double, c_double]: ...
 
-Vec2f = Vec2[float]
-Vec3f = Vec3[float]
-Vec4f = Vec4[float]
+class Vec3f:
+    x: c_float
+    y: c_float
+    z: c_float
+    def __init__(self, x: c_float, y: c_float, z: c_float) -> None: ...
+    def tuple(self) -> Tuple[c_float, c_float, c_float]: ...
 
-Vec2d = Vec2[double]
-Vec3d = Vec3[double]
-Vec4d = Vec4[double]
+class Vec3i:
+    x: c_int32
+    y: c_int32
+    z: c_int32
+    def __init__(self, x: c_int32, y: c_int32, z: c_int32) -> None: ...
+    def tuple(self) -> Tuple[c_int32, c_int32, c_int32]: ...
+
+class Vec3u:
+    x: c_uint8
+    y: c_uint8
+    z: c_uint8
+    def __init__(self, x: c_uint8, y: c_uint8, z: c_uint8) -> None: ...
+    def tuple(self) -> Tuple[c_uint8, c_uint8, c_uint8]: ...
+
+class Vec4b:
+    x: bool
+    y: bool
+    z: bool
+    w: bool
+    def __init__(self, x: bool, y: bool, z: bool, w: bool) -> None: ...
+    def tuple(self) -> Tuple[bool, bool, bool, bool]: ...
+
+class Vec4d:
+    x: c_double
+    y: c_double
+    z: c_double
+    w: c_double
+    def __init__(self, x: c_double, y: c_double, z: c_double, w: c_double) -> None: ...
+    def tuple(self) -> Tuple[c_double, c_double, c_double, c_double]: ...
+
+class Vec4f:
+    x: c_float
+    y: c_float
+    z: c_float
+    w: c_float
+    def __init__(self, x: c_float, y: c_float, z: c_float, w: c_float) -> None: ...
+    def tuple(self) -> Tuple[c_float, c_float, c_float, c_float]: ...
+
+class Vec4i:
+    x: c_int32
+    y: c_int32
+    z: c_int32
+    w: c_int32
+    def __init__(self, x: c_int32, y: c_int32, z: c_int32, w: c_int32) -> None: ...
+    def tuple(self) -> Tuple[c_int32, c_int32, c_int32, c_int32]: ...
+
+class Vec4u:
+    x: c_uint8
+    y: c_uint8
+    z: c_uint8
+    w: c_uint8
+    def __init__(self, x: c_uint8, y: c_uint8, z: c_uint8, w: c_uint8) -> None: ...
+    def tuple(self) -> Tuple[c_uint8, c_uint8, c_uint8, c_uint8]: ...
