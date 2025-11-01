@@ -1,15 +1,15 @@
 from typing import Generic, TypeVar, Tuple, Union, List, Any
 import numpy as np
 
-import .blocks
-import .csg
-import .florae
-import .groups
-import .lighting
-import .material_properties
+from . import blocks
+from . import csg
+from . import florae
+from . import groups
+from . import lighting
+from . import material_properties
+from . import sbo
 
-
-T = TypeVar('T', bool, int, float)
+T = TypeVar("T", bool, int, float)
 RGBA = Tuple[int, int, int, int]
 
 class Transform:
@@ -30,22 +30,6 @@ class Level:
     MACRO: int
     MICRO: int
 
-class Quad:
-    def pos(self) -> Tuple[int, int, int]: ...
-    lvl: Level
-
-class Box:
-    def pos(self) -> Tuple[int, int, int]: ...
-    len: int
-
-class Edge:
-    def v0(self) -> Tuple[float, float, float]: ...
-    def v1(self) -> Tuple[float, float, float]: ...
-
-class WireframeMesh:
-    def vertex_data(self) -> memoryview: ...
-    def index_data(self) -> memoryview: ...
-
 # Module functions
 def apply(tensor: Any, transform: Transform) -> Any: ...
 def shift(transform: Transform) -> Transform: ...
@@ -62,4 +46,14 @@ def is_valid_glass_id(arg0: int) -> bool: ...
 def from_glass_id(arg0: int) -> Any: ...
 def to_glass(arg0: Any) -> Any: ...
 def to_surface(tensor: Any) -> Any: ...
-def to_geometry(tensor: Any) -> GeometryBuffer: ...
+
+
+__all__ = [
+    "blocks",
+    "csg",
+    "florae",
+    "groups",
+    "lighting",
+    "material_properties",
+    "sbo",
+]
